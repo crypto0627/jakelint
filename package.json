@@ -1,6 +1,6 @@
 {
   "name": "jakelint",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "eslint config for jakekuo project feat. Jake",
   "main": "index.js",
   "scripts": {
