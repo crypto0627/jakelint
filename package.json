@@ -10,18 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jakekuo/jakelint.git"
+    "url": "git+https://github.com/crypto0627/jakelint.git"
   },
-  "keywords": [
-    "eslint",
-    "eslintconfig",
-    "jakekuo"
-  ],
   "author": "Jake Kuo",
   "license": "MIT",
-  "homepage": "https://github.com/jakekuo/jakelint#readme",
+  "homepage": "https://github.com/crypto0627/jakelint",
   "bugs": {
-    "url": "https://github.com/jakekuo/jakelint/issues"
+    "url": "https://github.com/crypto0627/jakelint/issues"
   },
   "dependencies": {
     "@stylistic/eslint-plugin-ts": "^4.2.0",
