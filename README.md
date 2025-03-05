@@ -10,7 +10,7 @@ npm install --save-dev jakelint
 
 ### 建立 ESLint 配置文件
 
-在您的專案根目錄下建立一個名為 `eslint.config.mjs` 的文件，內容如下：
+在您的專案根目錄下建立一個名為 `eslint.config.js` 的文件，內容如下：
 
 ```javascript
 export { default } from 'jakelint';
@@ -24,15 +24,15 @@ export { default } from 'jakelint';
 
 ```json
 "scripts": {
-  "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue",
-  "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx,.vue"
+  "lint": "eslint -c eslint.config.js",
+  "lint:fix": "eslint --fix -c eslint.config.js"
 }
 ```
 
 使用者可在執行命令時自行指定要檢查的檔案或目錄，例如：
 
 ```sh
-npm run lint -- your-folder
+npm run lint
 ```
 
 ### 覆寫 TypeScript 設定
@@ -75,7 +75,3 @@ npx eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix
 ## 授權
 
 [MIT License](LICENSE)
-
----
-
-以上即為更新後的 README，您可以根據專案需求進一步調整內容。

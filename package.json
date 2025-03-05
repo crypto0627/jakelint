@@ -3,9 +3,10 @@
   "version": "1.0.4",
   "description": "eslint config for jakekuo project feat. Jake",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint": "eslint -c eslint.config.js",
+    "lint:fix": "eslint --fix -c eslint.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,18 +19,14 @@
     "url": "https://github.com/crypto0627/jakelint/issues"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin-ts": "^2.6.2",
-    "@typescript-eslint/eslint-plugin": "^8.1.0",
-    "@typescript-eslint/parser": "^8.1.0",
-    "eslint": "^8.57.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^50.0.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.6.0"
-  },
-  "devDependencies": {
-    "eslint-plugin-vue": "^9.33.0",
-    "vue-eslint-parser": "^9.4.3"
+    "@eslint/js": "^9.21.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@stylistic/eslint-plugin-ts": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsdoc": "^50.6.3",
+    "eslint-plugin-vue": "^9.33.0"
   }
 }
