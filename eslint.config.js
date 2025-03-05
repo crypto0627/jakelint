@@ -96,7 +96,7 @@ export default [
       ecmaVersion: 2020,
       sourceType: 'module',
       parserOptions: {
-        project: './tsconfig.json'
+        project: 'tsconfig.json'
       },
     },
     rules: {},
@@ -107,6 +107,13 @@ export default [
       parser: vueParser,
       ecmaVersion: 2020,
       sourceType: 'module',
+      parserOptions: {
+        parser: tsParser,
+        sourceType: 'module',
+        ecmaVersion: 2020,
+        project: 'tsconfig.json',
+        extraFileExtensions: ['.vue'],
+      },
     },
     processor: vuePlugin.processors['.vue'],
     rules: {},
