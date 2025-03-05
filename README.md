@@ -1,21 +1,4 @@
-以下是更新後的 README 範例，反映最新 ESLint flat config 機制，並支援 JavaScript、TypeScript、TSX、JSX 與 Vue，同時讓使用者可自行指定要檢查的檔案或目錄：
-
----
-
 # jakelint
-
-`jakelint` 是一個基於 ESLint flat config 機制的配置包，旨在為 Vue 3、Express 及其他現代 Web 開發環境提供一致的代碼風格與最佳實踐支持。  
-此配置支援 JavaScript、TypeScript、TSX、JSX 與 Vue 檔案。
-
-## 特性
-
-- 採用 ESLint flat config 機制（ESLint v9 以上）
-- 遵循 TypeScript 最佳實踐
-- 內建 `@typescript-eslint` 規則集
-- 支援 `import`、`jsdoc` 規則
-- 使用 `@stylistic/ts` 確保代碼風格一致性
-- 針對 Vue 3 與 Express 進行優化
-- 不限定於固定目錄，使用者可自由指定檢查的檔案或目錄
 
 ## 安裝
 
