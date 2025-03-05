@@ -5,6 +5,7 @@ import tsParser from '@typescript-eslint/parser';
 import importPlugin from 'eslint-plugin-import';
 import jsdocPlugin from 'eslint-plugin-jsdoc';
 import vuePlugin from 'eslint-plugin-vue';
+import vueParser from 'vue-eslint-parser';
 
 export default [
   {
@@ -13,7 +14,7 @@ export default [
   {
     files: ['src/**/*.{js,ts,vue}'],
     languageOptions: {
-      ecmaVersion: 2018,
+      ecmaVersion: 2020,
       sourceType: 'module',
       parser: tsParser,
     },
@@ -81,7 +82,7 @@ export default [
   {
     files: ['src/**/*.{js,jsx}'],
     languageOptions: {
-      ecmaVersion: 2018,
+      ecmaVersion: 2020,
       sourceType: 'module'
     },
     rules: {
@@ -92,7 +93,7 @@ export default [
     files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       parser: tsParser,
-      ecmaVersion: 2018,
+      ecmaVersion: 2020,
       sourceType: 'module',
       parserOptions: {
         project: './tsconfig.json'
@@ -103,8 +104,8 @@ export default [
   {
     files: ['src/**/*.vue'],
     languageOptions: {
-      parser: tsParser,
-      ecmaVersion: 2018,
+      parser: vueParser,
+      ecmaVersion: 2020,
       sourceType: 'module',
     },
     processor: vuePlugin.processors['.vue'],

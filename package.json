@@ -1,6 +1,6 @@
 {
   "name": "jakelint",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "eslint config for jakekuo project feat. Jake",
   "main": "index.js",
   "type": "module",
@@ -27,6 +27,7 @@
     "eslint": "^9.21.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsdoc": "^50.6.3",
-    "eslint-plugin-vue": "^9.33.0"
+    "eslint-plugin-vue": "^9.33.0",
+    "vue-eslint-parser": "^10.0.0"
   }
 }
