@@ -6,17 +6,24 @@ import importPlugin from 'eslint-plugin-import';
 import jsdocPlugin from 'eslint-plugin-jsdoc';
 import vuePlugin from 'eslint-plugin-vue';
 import vueParser from 'vue-eslint-parser';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 export default [
   {
     ignores: ['node_modules/**', 'out/**', 'dist/**', '*.json', '*.css', '*.html'],
   },
   {
-    files: ['src/**/*.{js,ts,vue}'],
+    files: ['src/**/*.{js,ts,vue,jsx,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
       parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      }
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
@@ -24,6 +31,8 @@ export default [
       jsdoc: jsdocPlugin,
       '@stylistic': stylisticPlugin,
       vue: vuePlugin,
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin
     },
     rules: {
       quotes: ['error', 'single'],
@@ -77,6 +86,16 @@ export default [
           peerDependencies: false,
         },
       ],
+      // React rules
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      'react/display-name': 'error',
+      'react/no-unescaped-entities': 'error',
+      'react/no-deprecated': 'error',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn'
     },
   },
   {

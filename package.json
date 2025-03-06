@@ -1,8 +1,9 @@
 {
   "name": "jakelint",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "eslint config for jakekuo project feat. Jake",
   "main": "index.js",
+  "types": "index.d.ts",
   "type": "module",
   "scripts": {
     "lint": "eslint -c eslint.config.js",
@@ -17,6 +18,10 @@
   "homepage": "https://github.com/crypto0627/jakelint",
   "bugs": {
     "url": "https://github.com/crypto0627/jakelint/issues"
+  },
+  "exports": {
+    ".": "./eslint.config.js",
+    "./eslint.config.js": "./eslint.config.js"
   },
   "dependencies": {
     "@eslint/js": "^9.21.0",

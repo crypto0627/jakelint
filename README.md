@@ -1,26 +1,26 @@
 # jakelint
 
-## 安裝
+## Installation
 
 ```sh
 npm install --save-dev jakelint
 ```
 
-## 使用方法
+## Usage
 
-### 建立 ESLint 配置文件
+### Creating an ESLint Configuration File
 
-在您的專案根目錄下建立一個名為 `eslint.config.js` 的文件，內容如下：
+In the root directory of your project, create a file named `eslint.config.js` with the following content:
 
 ```javascript
 export { default } from 'jakelint';
 ```
 
-這樣，當您執行 ESLint 時，將自動載入 `jakelint` 提供的配置。
+This ensures that ESLint automatically loads the configuration provided by `jakelint` when executed.
 
-### 修改 `package.json` 的 `scripts` 欄位
+### Updating the `scripts` Section in `package.json`
 
-建議在 `package.json` 中添加以下腳本，以便使用 ESLint 進行代碼檢查：
+It is recommended to add the following scripts to your `package.json` for easier linting:
 
 ```json
 "scripts": {
@@ -29,15 +29,15 @@ export { default } from 'jakelint';
 }
 ```
 
-使用者可在執行命令時自行指定要檢查的檔案或目錄，例如：
+You can specify files or directories to lint when running the command, for example:
 
 ```sh
 npm run lint
 ```
 
-### 覆寫 TypeScript 設定
+### Overriding TypeScript Configuration
 
-如果需要指定 TypeScript 設定檔（預設為 `tsconfig.json`），可在 `eslint.config.mjs` 中覆寫相關配置。例如，若您希望使用自訂的 TypeScript 設定檔：
+If you need to specify a TypeScript configuration file (default is `tsconfig.json`), you can override it in `eslint.config.mjs`. For example, if you want to use a custom TypeScript configuration file:
 
 ```javascript
 import baseConfig from 'jakelint';
@@ -54,24 +54,24 @@ export default [
 ];
 ```
 
-## 相關命令
+## Commands
 
-### 檢查代碼
+### Checking Code
 
 ```sh
 npx eslint . --ext .js,.jsx,.ts,.tsx,.vue
 ```
 
-### 自動修復問題
+### Auto-fixing Issues
 
 ```sh
 npx eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix
 ```
 
-## 貢獻
+## Contributing
 
-如果您有任何建議或改進，歡迎提交 Pull Request 或 Issue！
+If you have any suggestions or improvements, feel free to submit a Pull Request or open an Issue!
 
-## 授權
+## License
 
 [MIT License](LICENSE)
