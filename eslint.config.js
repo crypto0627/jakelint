@@ -37,6 +37,7 @@ export default [
     rules: {
       quotes: ['error', 'single'],
       'comma-dangle': ['error', 'always-multiline'],
+      semi: ['error', 'never'],
       camelcase: 'off',
       'no-unused-vars': 'off',
       'require-await': 'error',
