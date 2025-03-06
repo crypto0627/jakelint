@@ -6,33 +6,28 @@ import importPlugin from 'eslint-plugin-import';
 import jsdocPlugin from 'eslint-plugin-jsdoc';
 import vuePlugin from 'eslint-plugin-vue';
 import vueParser from 'vue-eslint-parser';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 export default [
   {
     ignores: ['node_modules/**', 'out/**', 'dist/**', '*.json', '*.css', '*.html'],
   },
+  // 默認配置（適用於 .ts 和 .js 文件）
   {
-    files: ['src/**/*.{js,ts,vue,jsx,tsx}'],
+    files: ['src/**/*.{ts,js}'],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
       parser: tsParser,
       parserOptions: {
-        ecmaFeatures: {
-          jsx: true
-        }
-      }
+        project: './tsconfig.json',
+        tsconfigRootDir: './',
+      },
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
       import: importPlugin,
       jsdoc: jsdocPlugin,
       '@stylistic': stylisticPlugin,
-      vue: vuePlugin,
-      react: reactPlugin,
-      'react-hooks': reactHooksPlugin
     },
     rules: {
       quotes: ['error', 'single'],
@@ -87,40 +82,30 @@ export default [
           peerDependencies: false,
         },
       ],
-      // React rules
-      'react/jsx-uses-react': 'error',
-      'react/jsx-uses-vars': 'error',
-      'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
-      'react/display-name': 'error',
-      'react/no-unescaped-entities': 'error',
-      'react/no-deprecated': 'error',
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn'
     },
   },
+  // React 配置（適用於 .tsx 和 .jsx 文件）
   {
-    files: ['src/**/*.{js,jsx}'],
+    files: ['src/**/*.{tsx,jsx}'],
     languageOptions: {
-      ecmaVersion: 2020,
-      sourceType: 'module'
-    },
-    rules: {
-      '@typescript-eslint/naming-convention': 'off',
-    },
-  },
-  {
-    files: ['src/**/*.{ts,tsx}'],
-    languageOptions: {
-      parser: tsParser,
       ecmaVersion: 2020,
       sourceType: 'module',
+      parser: tsParser,
       parserOptions: {
-        project: 'tsconfig.json'
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      import: importPlugin,
+      jsdoc: jsdocPlugin,
+      '@stylistic': stylisticPlugin,
     },
     rules: {},
   },
+  // Vue 配置（適用於 .vue 文件）
   {
     files: ['src/**/*.vue'],
     languageOptions: {
@@ -131,11 +116,41 @@ export default [
         parser: tsParser,
         sourceType: 'module',
         ecmaVersion: 2020,
-        project: 'tsconfig.json',
         extraFileExtensions: ['.vue'],
       },
     },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      import: importPlugin,
+      jsdoc: jsdocPlugin,
+      '@stylistic': stylisticPlugin,
+      vue: vuePlugin,
+    },
     processor: vuePlugin.processors['.vue'],
-    rules: {},
+    rules: {
+      'vue/multi-word-component-names': 'error',
+      'vue/component-definition-name-casing': ['error', 'PascalCase'],
+      'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+      'vue/component-tags-order': ['error', {
+        order: ['script', 'template', 'style']
+      }],
+      'vue/no-unused-components': 'error',
+      'vue/no-unused-vars': 'error',
+      'vue/no-v-html': 'error',
+      'vue/require-default-prop': 'error',
+      'vue/require-prop-types': 'error',
+      'vue/v-bind-style': ['error', 'shorthand'],
+      'vue/v-on-style': ['error', 'shorthand'],
+      'vue/no-multiple-template-root': 'error',
+      'vue/valid-template-root': 'error',
+      'vue/valid-v-bind': 'error',
+      'vue/valid-v-if': 'error',
+      'vue/valid-v-else': 'error',
+      'vue/valid-v-else-if': 'error',
+      'vue/valid-v-for': 'error',
+      'vue/valid-v-model': 'error',
+      'vue/valid-v-on': 'error',
+      'vue/valid-v-show': 'error',
+    },
   },
 ];
