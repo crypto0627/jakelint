@@ -128,7 +128,6 @@ export default [
     },
     processor: vuePlugin.processors['.vue'],
     rules: {
-      'vue/multi-word-component-names': 'error',
       'vue/component-definition-name-casing': ['error', 'PascalCase'],
       'vue/component-name-in-template-casing': ['error', 'PascalCase'],
       'vue/component-tags-order': ['error', {
@@ -141,8 +140,6 @@ export default [
       'vue/require-prop-types': 'error',
       'vue/v-bind-style': ['error', 'shorthand'],
       'vue/v-on-style': ['error', 'shorthand'],
-      'vue/no-multiple-template-root': 'error',
-      'vue/valid-template-root': 'error',
       'vue/valid-v-bind': 'error',
       'vue/valid-v-if': 'error',
       'vue/valid-v-else': 'error',
