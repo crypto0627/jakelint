@@ -20,7 +20,6 @@ export default [
       parser: tsParser,
       parserOptions: {
         project: './tsconfig.json',
-        tsconfigRootDir: './',
       },
     },
     plugins: {
