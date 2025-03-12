@@ -1,5 +1,7 @@
 # jakelint
 
+![jakelint](/public/jakelint.png)
+
 ## Installation
 
 ```sh
