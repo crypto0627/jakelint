@@ -94,6 +94,8 @@ export default [
         ecmaFeatures: {
           jsx: true,
         },
+        // 移除特定项目配置，避免解析错误
+        // project: './tsconfig.json',
       },
     },
     plugins: {
@@ -102,7 +104,62 @@ export default [
       jsdoc: jsdocPlugin,
       '@stylistic': stylisticPlugin,
     },
-    rules: {},
+    rules: {
+      quotes: ['error', 'single'],
+      'comma-dangle': ['error', 'always-multiline'],
+      semi: ['error', 'never'],
+      camelcase: 'off',
+      'no-unused-vars': 'off',
+      'require-await': 'error',
+      indent: 'off',
+      '@stylistic/indent': ['error', 2, { SwitchCase: 1 }],
+      'jsdoc/check-alignment': 'error',
+      'jsdoc/check-indentation': 'error',
+      '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-inferrable-types': [
+        'warn',
+        { ignoreParameters: true },
+      ],
+      '@typescript-eslint/no-unused-vars': 'warn',
+      '@stylistic/member-delimiter-style': [
+        'error',
+        {
+          multiline: { delimiter: 'none', requireLast: true },
+          singleline: { requireLast: false },
+        },
+      ],
+      // 移除需要类型检查的规则，因为我们不再使用 project 配置
+      // '@typescript-eslint/no-floating-promises': 'error',
+      'import/no-cycle': 'error',
+      'no-use-before-define': 'warn',
+      '@typescript-eslint/naming-convention': [
+        'warn',
+        { selector: 'default', format: ['camelCase'] },
+        { selector: ['class', 'interface', 'typeAlias', 'typeParameter'], format: ['PascalCase'] },
+        { selector: 'enum', format: ['PascalCase'], custom: { regex: '.*Enum$', match: true } },
+        { selector: 'enumMember', format: ['UPPER_CASE'] },
+        { selector: 'classProperty', modifiers: ['static'], format: ['UPPER_CASE'] },
+        { selector: 'objectLiteralProperty', format: null },
+        { selector: 'import', format: ['camelCase', 'PascalCase'] },
+      ],
+      'space-before-blocks': 'off',
+      '@stylistic/space-before-blocks': 'error',
+      '@stylistic/type-annotation-spacing': 'error',
+      'no-plusplus': 'error',
+      'no-useless-concat': 'error',
+      'prefer-template': 'error',
+      // 移除需要类型检查的规则
+      // '@typescript-eslint/await-thenable': 'error',
+      'import/no-extraneous-dependencies': [
+        'error',
+        {
+          devDependencies: false,
+          optionalDependencies: false,
+          peerDependencies: false,
+        },
+      ],
+    },
   },
   // Vue 配置（適用於 .vue 文件）
   {
@@ -147,6 +204,39 @@ export default [
       'vue/valid-v-model': 'error',
       'vue/valid-v-on': 'error',
       'vue/valid-v-show': 'error',
+      quotes: ['error', 'single'],
+      'comma-dangle': ['error', 'always-multiline'],
+      semi: ['error', 'never'],
+      camelcase: 'off',
+      'no-unused-vars': 'off',
+      'require-await': 'error',
+      indent: 'off',
+      '@stylistic/indent': ['error', 2, { SwitchCase: 1 }],
+      'jsdoc/check-alignment': 'error',
+      'jsdoc/check-indentation': 'error',
+      '@stylistic/member-delimiter-style': [
+        'error',
+        {
+          multiline: { delimiter: 'none', requireLast: true },
+          singleline: { requireLast: false },
+        },
+      ],
+      'import/no-cycle': 'error',
+      'no-use-before-define': 'warn',
+      'space-before-blocks': 'off',
+      '@stylistic/space-before-blocks': 'error',
+      '@stylistic/type-annotation-spacing': 'error',
+      'no-plusplus': 'error',
+      'no-useless-concat': 'error',
+      'prefer-template': 'error',
+      'import/no-extraneous-dependencies': [
+        'error',
+        {
+          devDependencies: false,
+          optionalDependencies: false,
+          peerDependencies: false,
+        },
+      ],
     },
   },
 ];
