@@ -34,5 +34,11 @@
     "eslint-plugin-jsdoc": "^50.6.3",
     "eslint-plugin-vue": "^9.33.0",
     "vue-eslint-parser": "^10.0.0"
+  },
+  "devDependencies": {
+    "@vue/runtime-dom": "^3.5.13",
+    "eslint-plugin-react": "^7.37.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
